@@ -20,6 +20,7 @@ const HeroBanner = () => {
     }, [data])
 
     const searchQueryHandler = event => {
+        console.log('btn clicked')
         if (event.key === "Enter" && query.length > 0) {
             navigate(`/search/${query}`)
         }

@@ -4,7 +4,9 @@ import './style.scss'
 
 const PageNotFound = () => {
   return (
-    <div>PageNotFound</div>
+    <div className='notFound'>
+      <h1 className='cush1'>This Page Not Available Right Now</h1>
+    </div>
   )
 }
 

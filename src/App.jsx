@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getApiConfiguration } from './store/homeSlice'
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import Home from './Pages/home/Home'
-import Details from './Pages/details/Details'
+import Details from './Pages/Details/Details'
 import SearchResult from './Pages/searchResult/SearchResult'
 import Explore from './Pages/explore/Explore'
 import PageNotFound from './Pages/404/PageNotFound'
@@ -26,7 +26,6 @@ function App() {
 
   const fetchApiConfig = () =>{
     fetchDatafromApi("/configuration").then(res => {
-      console.log(res);
       const url = {
         backdrop : res.images.secure_base_url + "original",
         poster : res.images.secure_base_url + "original",
@@ -58,6 +57,7 @@ function App() {
     <Route path='/:mediaType/:id' element={<Details></Details>}></Route>
     <Route path='/search/:query' element={<SearchResult></SearchResult>}></Route>
     <Route path='/expolore/:mediaType' element={<Explore></Explore>}></Route>
+    <Route path='/notFound' element={<PageNotFound></PageNotFound>}></Route>
     <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
   </Routes>
   <Footer></Footer>
